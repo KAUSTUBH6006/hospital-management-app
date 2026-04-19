@@ -65,7 +65,7 @@ if choice == "Add Patient":
         with col2:
             mobno = st.text_input("Mobile No")
             p_case = st.text_input("Case/Diagnosis")
-            date_of_admit = st.date_input("Date of Admission")
+            date_of_admit = st.date_input("Date of Admit")
             date_of_discharge = st.date_input("Date of Discharge")
             treat = st.text_input("Treatment")
             
@@ -80,7 +80,7 @@ if choice == "Add Patient":
             if not patid or not patname:
                 st.error("Patient ID and Name are required fields.")
             else:
-                totalbill = hoscharge + trecharge
+                totalbill = round(hoscharge + trecharge, 2)
                 data = [
                     patid, patname, str(age), gender, patadd, mobno, 
                     p_case, str(date_of_admit), str(date_of_discharge), treat, 
